@@ -14,11 +14,7 @@ class SearchDropdown extends Component
     {
         if (strlen($this->search)>=2) {
            
-            $this->searchResults =  Http::withHeaders([
-                'Client-ID' => 'ozvdx5o7wgldpzcfuucvnk4pzjg1u0',
-                'Authorization' => 'Bearer zw41m0f7c98ugj72hd3hr6nqybiinu',
-                
-            ])->withBody(
+            $this->searchResults =  Http::withHeaders(config('services.igdb'))->withBody(
                 "search \"{$this->search}\";
                 fields name, cover.url,slug;
                 limit 8;","text/plain"

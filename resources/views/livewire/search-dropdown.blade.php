@@ -1,12 +1,12 @@
 <div class="relative" x-data="{isVisible: true}" @click.away="isVisible= false">
     <input
      x-ref="search"
-     @keydown.window ="
+    {{--  @keydown.window ="
      if(event.keyCode === 191 {
          event.preventDefault();
          $refs.search.focus();
         }
-    "
+    " --}}
     @focus="isVisible = true"
     @keydown.escape.window="isVisible = false"
     @keydown="isVisible = true"

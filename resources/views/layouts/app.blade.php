@@ -6,9 +6,10 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Video Games App</title>
     <link rel="stylesheet" href="/css/main.css">
-    <script src="https://kit.fontawesome.com/4a6cef6c86.js" crossorigin="anonymous"></script>
     <livewire:styles />
     <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
+    <script src="https://kit.fontawesome.com/dc4032cd09.js" crossorigin="anonymous"></script>
+
 </head>
 <body class="bg-gray-900 text-white">
     <header class="border-b border-gray-800">

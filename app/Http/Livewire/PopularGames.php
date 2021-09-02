@@ -21,11 +21,7 @@ class PopularGames extends Component
 
         $popularGamesUnformatted =Cache::remember('popular-games',1, function() use($before,$after){
             
-            return Http::withHeaders([
-                'Client-ID' => 'ozvdx5o7wgldpzcfuucvnk4pzjg1u0',
-                'Authorization' => 'Bearer ux8ndcb2gg1ar6zsz3268beg2omatn',
-                
-            ])->withBody(
+            return Http::withHeaders(config('services.igdb'))->withBody(
                 "fields name,cover.url,first_release_date,total_rating_count, platforms.abbreviation, rating, slug;
                 where platforms = (48,49,130,6)
                 & ( first_release_date >= {$before} 

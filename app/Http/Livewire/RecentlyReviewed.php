@@ -19,11 +19,7 @@ class RecentlyReviewed extends Component
         $current=Carbon::now()->timestamp;
         $recentlyReviewedGameUnformatted =Cache::remember('recently-reviewed',10,function() use($before,$current){
            
-            return Http::withHeaders([
-                'Client-ID' => 'ozvdx5o7wgldpzcfuucvnk4pzjg1u0',
-                'Authorization' => 'Bearer zw41m0f7c98ugj72hd3hr6nqybiinu',
-                
-            ])->withBody(
+            return Http::withHeaders(config('services.igdb'))->withBody(
                 "fields name,cover.url,first_release_date,total_rating_count, platforms.abbreviation, rating, slug, summary;
                 where platforms = (48,49,130,6)
                 & ( first_release_date >= {$before} 
